@@ -1,0 +1,22 @@
+#title{
+    width : 300px;
+    display: block;
+    padding-left: 10%;
+}
+
+#house{
+    display: block;
+    width: 70%;
+    padding: 0%;
+    margin: 0 auto;
+}
+.house h1{
+    padding: 0%;
+}
+
+#aichi-map{
+    display: block;
+    width: 50%;
+    padding: 0%;
+    margin: 0 auto;
+}
