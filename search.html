@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>調査</title>
+</head>
+<body>
+    <div class="title">
+        <a href="index.html">
+            <img class="title-image" width="600px" height="200px" src="imageFolder/title.png">
+        </a>
+    </div>
+    <section class="search">
+        <h2 class="radio-h2">1.エリアを決める</h2>
+        <div class="input-radio">
+            <input class="radio-func" type="radio" name="エリア" value="1000000" checked="checked">名古屋市
+            <input class="radio-func" type="radio" name="エリア" value="600000">豊田市
+            <input class="radio-func" type="radio" name="エリア" value="600000">岡崎市
+            <input class="radio-func" type="radio" name="エリア" value="10000">豊根村
+        </div>
+    </section>
+
+    <section class="search">
+        <h2 class="radio-h2">2.土地の大きさを決める</h2>
+        <div class="input-radio">
+            <input class="radio-func" type="radio" name="土地" value="30" checked="checked">30坪
+            <input class="radio-func" type="radio" name="土地" value="40">40坪
+            <input class="radio-func" type="radio" name="土地" value="50">50坪
+            <input class="radio-func" type="radio" name="土地" value="60">60坪
+            <input class="radio-func" type="radio" name="土地" value="100">100坪
+            <input class="radio-func" type="radio" name="土地" value="1000">1000坪
+
+        </div>
+    </section>
+    
+    <section class="search">
+        <h2 class="radio-h2">3.ハウスメーカーを決める</h2>
+        <div class="input-radio">
+            <input class="radio-func" type="radio" name="ハウスメーカー" value="1000000" checked="checked">へーベルハウス
+            <input class="radio-func" type="radio" name="ハウスメーカー" value="1000000">積水ハウス
+            <input class="radio-func" type="radio" name="ハウスメーカー" value="700000">トヨタホーム
+            <input class="radio-func" type="radio" name="ハウスメーカー" value="500000">タマホーム
+        </div>
+    </section>
+    <div class="check-div">
+        <button type="button" id="check">見積書発行</button>
+    </div>
+
+    <dialog id="dialog_ex1" aria-labelledby="dialog_ex1_h">
+        <h1 id="dialog_ex1_h">―――お見積り書―――</h3>
+        <h2 class="dialog-title title-house">お家の合計金額</h2>
+        <p class="dialog-comment"></p>
+        <h2 class="dialog-title title-land">お土地の合計金額</h2>
+        <p class="dialog-comment"></p>
+        <h2 class="dialog-title title-total">総額</h2>
+        <p class="dialog-comment"></p>
+        <div class="dialog-button-div">
+            <button class="dialog-button" type="button" onclick="this.closest('dialog').close();">閉じる</button>
+        </div>
+
+        <p class="dialog-sign">作成者:Yuta Sasaki</p>
+    </dialog>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
