@@ -34,45 +34,100 @@
 //         <p>ミサワホーム</p>80万
 //         <p>ヤマダホームズ</p>
 // </body>
+let areaName;
 let areaValue;
 let houseValue;
 let landValue;
+let properValue;
+let introValue;
 let landTotal;
 let houseTotal;
+let discount;
 let allTotal;
+
+// 即時実行
+const questionArea =function(){
+    // 1.エリア情報を取得 
+    areaValue = localStorage.getItem("areaValue");
+    // エリアと値段に分ける
+    areaName = areaValue.split(":")[0];
+    console.log('areaName: ', areaName);
+    areaValue = areaValue.split(":")[1];
+    console.log('areaValue: ', areaValue);
+
+    // 選択中のエリアに記入する
+    const questionArea = document.getElementById("question-area");
+    questionArea.innerText = "選択中のエリア: " + areaName;
+
+}();
+
+
+
+function test2(e){
+    areaValue = e.target.value;
+    localStorage.setItem("areaValue", areaValue);
+}
+
+
 
 
 function result(){
-
-    // 1.エリアを調査
-    const areaElements = document.getElementsByName("エリア");
     
-    for (let i=0; i<areaElements.length ;i++){
-        if(areaElements.item(i).checked){
-            areaValue = areaElements.item(i).value;
-            // console.log('areaValue: ', areaValue);
-        }
-    }
+
+    // ダイアログに表示させる準備をする
+    const dialog = document.getElementById("dialog_ex1");
+    const dialogElement = document.getElementsByClassName('dialog-comment');
+    
+    // 1.エリアを調査
+    
+    // for (let i=0; i<areaElements.length ;i++){
+    //     if(areaElements.item(i).checked){
+    //         areaValue = areaElements.item(i).value;
+    //         // console.log('areaValue: ', areaValue);
+    //     }
+    // }
     
     // 2.土地を調査
-    const landElements = document.getElementsByName("土地");
+    const landElements = document.getElementsByName("land");
     
     for (let i=0; i<landElements.length ;i++){
         if(landElements.item(i).checked){
             landValue = landElements.item(i).value;
-            // console.log('landValue: ', landValue);
+            console.log('landValue: ', landValue);
         }
     }
     
     // 3.ハウスメーカーを調査
-    const houseElements = document.getElementsByName("ハウスメーカー");
+    const houseElements = document.getElementsByName("house");
     
     for (let i=0; i<houseElements.length ;i++){
         if(houseElements.item(i).checked){
             houseValue = houseElements.item(i).value;
-            // console.log('houseValue: ', houseValue);
+            console.log('houseValue: ', houseValue);
         }
     }
+
+    // 4.ハウスメーカーを調査
+    const properElements = document.getElementsByName("proper");
+    
+    for (let i=0; i<properElements.length ;i++){
+        if(properElements.item(i).checked){
+            properValue = properElements.item(i).value;
+            console.log('properValue: ', properValue);
+        }
+    }
+    
+    // 5.ハウスメーカーを調査
+    const introElements = document.getElementsByName("intro");
+
+    for (let i=0; i<introElements.length ;i++){
+        if(introElements.item(i).checked){
+            introValue = introElements.item(i).value;
+            console.log('introValue: ', introValue);
+        }
+    }
+
+
 
     // 取得した情報から計算してみる
     // 土地
@@ -83,17 +138,26 @@ function result(){
     houseTotal = houseTotal + (houseTotal*0.1);
     // 家に諸費用を足す
     houseTotal = houseTotal + 700000;
+    // 家のお値引き
+    discount = (houseTotal*properValue) + (houseTotal*introValue);
 
     // 合計
-    allTotal = landTotal + houseTotal;
+    allTotal = landTotal + houseTotal - discount;
+
+    if(discount>0){
+        discount = discount * -1;
+        dialogElement[2].style.color = "red";
+    }
     // 全て円に計算
     houseTotal = `${new Intl.NumberFormat("ja-JP",{ notation: "compact"}).format(BigInt(houseTotal))}円`
     landTotal = `${new Intl.NumberFormat("ja-JP",{ notation: "compact"}).format(BigInt(landTotal))}円`
+    discount = `${new Intl.NumberFormat("ja-JP",{ notation: "compact"}).format(BigInt(discount))}円`
     allTotal = `${new Intl.NumberFormat("ja-JP",{ notation: "compact"}).format(BigInt(allTotal))}円`
 
 
     console.log('houseTotal: ', houseTotal);
     console.log('landTotal: ', landTotal);
+    console.log('discount: ', discount);
     console.log('allTotal: ', allTotal);
 
     // alert(
@@ -103,15 +167,14 @@ function result(){
     // );
 
 
-    // ダイアログに表示させる準備をする
-    const dialog = document.getElementById("dialog_ex1");
-    const dialogElement = document.getElementsByClassName('dialog-comment');
     // 家の金額を記入する
     dialogElement[0].innerText = houseTotal;
     // 土地の金額を記入する
     dialogElement[1].innerText = landTotal;
     // 合計を記入する
-    dialogElement[2].innerText = allTotal;
+    dialogElement[2].innerText = discount;
+    // 合計を記入する
+    dialogElement[3].innerText = allTotal;
 
     // ダイアログ表示
     dialog.showModal();
@@ -123,6 +186,4 @@ function result(){
 const checkButton = document.getElementById("check");
 
 checkButton.addEventListener("click",result);
-
-
 
