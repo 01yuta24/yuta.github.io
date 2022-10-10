@@ -78,19 +78,19 @@ body{
     /* right: 0; */
     /* bottom: 0; */
     opacity: 0;
-    animation: slideshow 16S linear infinite;
+    animation: slideshow 12S linear infinite;
 }
 
 .slide img:nth-child(2){
-    animation-delay: 4s;
+    animation-delay: 3s;
 }
 
 .slide img:nth-child(3){
-    animation-delay: 8s;
+    animation-delay: 6s;
 }
 
 .slide img:nth-child(4){
-    animation-delay: 12s;
+    animation-delay: 9s;
 }
 
 /*
@@ -171,7 +171,7 @@ body{
 }
 
 .section-how-title{
-    font-size: 40px;
+    font-size: 35px;
     font-weight: bold;
     padding: 20px;
     margin: 10px 0 0 0;
@@ -181,7 +181,7 @@ body{
     text-align: center;
     font-weight: bold;
     margin: 0 0 20px;
-    font-size: 30px;
+    font-size: 25px;
 }
 .How-image{
     margin: 0 0 20px;
@@ -193,7 +193,7 @@ body{
     padding: 0;
     font-weight: bold;
     text-align: center;
-    font-size: 22px;
+    font-size: 20px;
 }
 
 .section.section-search{
@@ -256,7 +256,7 @@ body{
     /* justify-content: center; */
 }
 .welcome-title{
-    font-size: 40px;
+    font-size: 35px;
     font-weight: bold;
     padding: 0;
     margin: 30px 0;
@@ -286,6 +286,309 @@ footer {
     color: #fff;
 }
 
+
+
+
+.aichi-map-title{
+    font-size: 35px;
+    font-weight: bold;
+    margin:10px 2%;
+}
+
+.aichi-map-div{
+    width: 100%;
+    position: relative;
+    text-align: center;
+}
+
+.aichi-map{
+    position: absolute;
+    width:1000px;
+    top: 300px;
+    left: 750px;
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    margin:0;
+    padding:0;
+}
+
+.map-button{
+    position: absolute;
+    width:100px;
+    height: 50px;
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    margin:0;
+    padding:0;
+}
+
+#map-nagakute{
+    top: 200px;
+    left: 900px;
+}
+#map-toyota{
+    top: 240px;
+    left: 1000px;
+}
+#map-kariya{
+    top: 310px;
+    left: 880px;
+}
+#map-hekinan{
+    top: 390px;
+    left: 860px;
+}
+#map-tahara{
+    top: 510px;
+    left: 930px;
+}
+#map-toyohasi{
+    top: 470px;
+    left: 1030px;
+}
+#map-okazaki{
+    top: 300px;
+    left: 990px;
+}
+#map-toyone{
+    top: 210px;
+    left: 1190px;
+}
+#map-meito{
+    top: 355px;
+    left: 555px;
+}
+#map-naka{
+    top: 380px;
+    left: 440px;
+}
+#map-tenpaku{
+    top: 420px;
+    left: 550px;
+}
+#map-minato{
+    top: 460px;
+    left: 380px;
+}
+
+.button {
+    display       : inline-block;
+    border-radius : 5%;          /* 角丸       */
+    font-size     : 15pt;        /* 文字サイズ */
+    text-align    : center;      /* 文字位置   */
+    cursor        : pointer;     /* カーソル   */
+    padding       : 5px 5px;   /* 余白       */
+    background    : #ffffff;     /* 背景色     */
+    color         : #000000;     /* 文字色     */
+    line-height   : 1em;         /* 1行の高さ  */
+    transition    : .3s;         /* なめらか変化 */
+    box-shadow    : 2px 2px #666666;  /* 影の設定 */
+}
+
+.button:active{
+    background: #1a720d;
+    color: #FFF;
+}
+.button:hover {
+box-shadow    : none;        /* カーソル時の影消去 */
+}
+
+
+.map-footer {
+    margin-top:1000px ;
+}
+.map-footer {
+    color: #fff;
+}
+
+/*************** 戻るボタンの設定 *******************/
+*,
+*:before,
+*:after {
+-webkit-box-sizing: inherit;
+box-sizing: inherit;
+}
+
+html {
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+font-size: 62.5%;/*rem算出をしやすくするために*/
+}
+
+.question-area-button{
+    margin: 0 0 50px 0;
+}
+
+.btn,
+a.btn,
+button.btn {
+font-size: 2.0rem;
+font-weight: 700;
+line-height: 1.5;
+position: relative;
+display: inline-block;
+padding: 1rem 4rem;
+cursor: pointer;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+-webkit-transition: all 0.3s;
+transition: all 0.3s;
+text-align: center;
+vertical-align: middle;
+text-decoration: none;
+letter-spacing: 0.1em;
+color: #212529;
+border-radius: 0.5rem;
+}
+
+a.btn--yellow {
+    color: #000;
+    background-color: #f7eb0e;
+    border-bottom: 5px solid #ccc100;
+}
+
+a.btn--yellow:hover {
+margin-top: 3px;
+color: #000;
+background: #eee68e;
+border-bottom: 2px solid #ccc100;
+}
+/* ************************************************** */
+
+.question-main{
+    margin: 0 2%;
+}
+
+#question-area{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0 0 20px;
+}
+
+
+.question{
+    display: flex;
+}
+.question label{
+    display: block;
+    width: 150px;
+    background: #c8eac3;
+    color: #000;
+    padding: 10px;
+    margin: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+.question input:checked+label{
+    background: #1a720d;
+    color: #FFF;
+}
+.question input{
+    display: none;
+}
+
+.check-div{
+    text-align: center;
+    margin-top: 100px;
+}
+
+.button {
+    display       : inline-block;
+    border-radius : 5%;          /* 角丸       */
+    font-size     : 15pt;        /* 文字サイズ */
+    text-align    : center;      /* 文字位置   */
+    cursor        : pointer;     /* カーソル   */
+    padding       : 5px 5px;   /* 余白       */
+    background    : #ffffff;     /* 背景色     */
+    color         : #000000;     /* 文字色     */
+    line-height   : 1em;         /* 1行の高さ  */
+    transition    : .3s;         /* なめらか変化 */
+    box-shadow    : 2px 2px #666666;  /* 影の設定 */
+}
+
+.button:hover {
+    box-shadow    : none;        /* カーソル時の影消去 */
+    }
+
+    
+#check{
+    margin-top: 20px;
+    width: 250px;
+    height: 80px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+#dialog_ex1{
+    width: 35%;
+    height: 80%;
+}
+
+#dialog_ex1_h{
+    text-align: center;
+    font-size: 35px;
+}
+
+.dialog-title{
+    margin-top: 50px;
+    font-size : 25px;
+}
+
+.dialog-button-div{
+    margin-top: 80px;
+    text-align: center;
+}
+
+.dialog-button{
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+
+}
+
+.dialog-comment{
+    text-align: right;
+    font-size: 30px;
+}
+
+.dialog-sign{
+    text-align: right;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
 
 .search{
     margin: 80px 0 0 2%;
@@ -354,4 +657,4 @@ footer {
     text-align: right;
 }
 
-
+ */
