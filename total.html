@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <header class="title">
+        <a href="index.html">
+        <img class="title-image" src="title.png">
+    </a>
+    </header>
+
+    <main class="question-main">
+        <div id="question-area">選択中のエリア：</div>
+        
+        <div class="question-area-button">
+            <a href="map.html" class="btn btn--yellow btn--cubic">👈エリア選択に戻る</a>
+        </div>
+
+
+        <h2>2.土地の広さを選択してください</h2>
+        <div class="question">
+            <input type="radio" id="land-30" name="land" value="30"><label for="land-30">30坪</label>
+            <input type="radio" checked id="land-40" name="land" value="40"><label for="land-40">40坪</label>
+            <input type="radio" id="land-50" name="land" value="50"><label for="land-50">50坪</label>
+            <input type="radio" id="land-60" name="land" value="60"><label for="land-60">60坪</label>
+            <input type="radio" id="land-1000" name="land" value="1000"><label for="land-1000">1000坪</label>
+
+        </div>
+
+        <h2>3.ハウスメーカーを指定してください</h2>
+        <div class="question">
+            <input type="radio" id="house-high" name="house" value="1000000"><label for="house-high">ハイグレード住宅</label>
+            <input type="radio" checked id="house-middle" name="house" value="700000"><label for="house-middle">ミドルクラス住宅</label>
+            <input type="radio" id="house-low" name="house" value="300000"><label for="house-low">ローコスト住宅</label>
+        </div>
+
+        <h2>4.トヨタ自動車の社員か</h2>
+        <div class="question">
+            <input type="radio" id="proper" name="proper" value="0.1"><label for="proper">社員</label>
+            <input type="radio" checked id="not-proper" name="proper" value="0"><label for="not-proper">社員以外</label>
+        </div>
+
+        <h2>5.紹介制度利用</h2>
+        <div class="question">
+            <input type="radio" id="intro" name="intro" value="0.05"><label for="intro">あり</label>
+            <input type="radio" checked id="not-intro" name="intro" value="0"><label for="not-intro">なし</label>
+        </div>
+
+
+        <div class="check-div">
+            <button type="button" class="button" id="check">見積書発行</button>
+        </div>
+
+
+        <dialog id="dialog_ex1" aria-labelledby="dialog_ex1_h">
+            <h1 id="dialog_ex1_h">―――お見積り書―――</h3>
+            <h2 class="dialog-title title-house">お家の合計金額</h2>
+            <p class="dialog-comment"></p>
+            <h2 class="dialog-title title-land">お土地の合計金額</h2>
+            <p class="dialog-comment"></p>
+            <h2 class="dialog-title title-discount">お値引き</h2>
+            <p class="dialog-comment"></p>
+            <h2 class="dialog-title title-total">総額</h2>
+            <p class="dialog-comment"></p>
+            <div class="dialog-button-div">
+                <button class="dialog-button" type="button" onclick="this.closest('dialog').close();">閉じる</button>
+            </div>
+    
+            <p class="dialog-sign">作成者:Yuta Sasaki</p>
+        </dialog>
+
+
+
+
+    </main>
+
+
+    <footer>
+        <p>© All rights reserved by YutaSasaki.</p>
+    </footer>
+
+
+    <script type="text/javascript" src="script.js"></script>
+
+
+</body>
+</html>
